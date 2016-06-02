@@ -503,7 +503,11 @@
                     this._rotateByDegrees( e, target, action.rotateByDegrees );
                 }
             }
-
+            
+            if ( typeof action === 'function' ) {
+                action( e, target );
+            }
+            
             this._resetCurrentTransform( e );
         },
 
